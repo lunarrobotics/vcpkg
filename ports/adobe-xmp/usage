@@ -1,0 +1,4 @@
+The package adobe-xmp provides CMake targets:
+
+    find_package(adobe-xmp CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE ::XMPCoreStatic ::XMPFilesStatic)
