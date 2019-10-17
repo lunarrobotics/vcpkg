@@ -1,0 +1,6 @@
+Source: adobe-xmp
+Version: 5.6.0
+Homepage: https://www.adobe.com/products/xmp.html
+Description: Adobe’s Extensible Metadata Platform (XMP)
+Build-Depends: expat, zlib
+
