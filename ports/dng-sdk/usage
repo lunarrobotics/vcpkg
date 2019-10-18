@@ -1,0 +1,4 @@
+The package dng-sdk:x64-windows provides CMake targets:
+
+    find_package(dng-sdk CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE ::dng_sdk)

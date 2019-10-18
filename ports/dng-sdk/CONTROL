@@ -1,0 +1,6 @@
+Source: dng-sdk
+Version: 1.0.0
+Homepage: https://www.adobe.com/support/downloads/dng/dng_sdk.html
+Description: Adobe DNG Software Development Kit
+Build-Depends: adobe-xmp, zlib, libjpeg-turbo
+

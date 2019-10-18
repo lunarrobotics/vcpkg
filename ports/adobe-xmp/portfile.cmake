@@ -12,6 +12,7 @@ vcpkg_configure_cmake(
     PREFER_NINJA
     OPTIONS
         -DXMP_BUILD_STATIC=1
+        -DCMAKE_DEBUG_POSTFIX=_d
 )
 
 vcpkg_install_cmake()
