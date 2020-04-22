@@ -155,7 +155,7 @@ endif()
 find_library(ZLIB_RELEASE NAMES z zlib PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
 find_library(ZLIB_DEBUG NAMES z zlib zd zlibd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(JPEG_RELEASE NAMES jpeg jpeg-static PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-find_library(JPEG_DEBUG NAMES jpeg jpeg-static jpegd jpeg-staticd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(JPEG_DEBUG NAMES jpeg jpeg-static jpegd jpeg-staticd jpeg_d jpeg-static_d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(LIBPNG_RELEASE NAMES png16 libpng16 PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) #Depends on zlib
 find_library(LIBPNG_DEBUG NAMES png16 png16d libpng16 libpng16d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(PSQL_RELEASE NAMES pq libpq PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) # Depends on openssl and zlib(linux)
@@ -174,12 +174,12 @@ find_library(PCRE2_RELEASE NAMES pcre2-16 PATHS "${CURRENT_INSTALLED_DIR}/lib" N
 find_library(PCRE2_DEBUG NAMES pcre2-16 pcre2-16d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(FREETYPE_RELEASE NAMES freetype PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) #zlib, bzip2, libpng
 find_library(FREETYPE_DEBUG NAMES freetype freetyped PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
-find_library(DOUBLECONVERSION_RELEASE NAMES double-conversion PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-find_library(DOUBLECONVERSION_DEBUG NAMES double-conversion PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
-find_library(HARFBUZZ_RELEASE NAMES harfbuzz PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-find_library(HARFBUZZ_DEBUG NAMES harfbuzz PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(DOUBLECONVERSION_RELEASE NAMES double-conversion PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
+find_library(DOUBLECONVERSION_DEBUG NAMES double-conversion double-conversion_d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(HARFBUZZ_RELEASE NAMES harfbuzz PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
+find_library(HARFBUZZ_DEBUG NAMES harfbuzz harfbuzz_d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(SQLITE_RELEASE NAMES sqlite3 PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) # Depends on openssl and zlib(linux)
-find_library(SQLITE_DEBUG NAMES sqlite3 sqlite3d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(SQLITE_DEBUG NAMES sqlite3 sqlite3d sqlite3_d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 
 find_library(BROTLI_COMMON_RELEASE NAMES brotlicommon brotlicommon-static PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
 find_library(BROTLI_COMMON_DEBUG NAMES brotlicommon brotlicommon-static brotlicommond brotlicommon-staticd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
@@ -265,13 +265,15 @@ if(VCPKG_TARGET_IS_WINDOWS)
     endif()
     list(APPEND RELEASE_OPTIONS
             "SQLITE_LIBS=${SQLITE_RELEASE}"
-            "HARFBUZZ_LIBS=${harfbuzz_LIBRARIES_RELEASE}"
+            "HARFBUZZ_LIBS=${HARFBUZZ_RELEASE} ${FREETYPE_RELEASE_ALL}"
+            "DOUBLECONVERSION_LIBS=${DOUBLECONVERSION_RELEASE}"            
             "OPENSSL_LIBS=${SSL_RELEASE} ${EAY_RELEASE} ws2_32.lib secur32.lib advapi32.lib shell32.lib crypt32.lib user32.lib gdi32.lib"
         )
 
     list(APPEND DEBUG_OPTIONS
             "SQLITE_LIBS=${SQLITE_DEBUG}"
-            "HARFBUZZ_LIBS=${harfbuzz_LIBRARIES_DEBUG}"
+            "HARFBUZZ_LIBS=${HARFBUZZ_DEBUG} ${FREETYPE_DEBUG_ALL}"
+            "DOUBLECONVERSION_LIBS=${DOUBLECONVERSION_DEBUG}"
             "OPENSSL_LIBS=${SSL_DEBUG} ${EAY_DEBUG} ws2_32.lib secur32.lib advapi32.lib shell32.lib crypt32.lib user32.lib gdi32.lib"
         )
     if(WITH_PGSQL_PLUGIN)
