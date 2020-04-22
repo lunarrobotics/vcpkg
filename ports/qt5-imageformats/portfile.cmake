@@ -10,23 +10,23 @@ list(APPEND CORE_OPTIONS
     -verbose)
     
 find_library(TIFF_RELEASE NAMES tiff PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) # Depends on lzma
-find_library(TIFF_DEBUG NAMES tiffd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(TIFF_DEBUG NAMES tiffd tiff_d PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(JPEG_RELEASE NAMES jpeg jpeg-static PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
 find_library(JPEG_DEBUG NAMES jpeg jpeg-static jpegd jpeg-staticd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(ZLIB_RELEASE NAMES z zlib PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
 find_library(ZLIB_DEBUG NAMES z zlib zd zlibd PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 
 find_library(JASPER_RELEASE NAMES jasper PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-find_library(JASPER_DEBUG NAMES jasperd jasper libjasperd libjasper PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(JASPER_DEBUG NAMES jasperd jasper_d jasper libjasperd libjasper_d libjasper PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 if(NOT VCPKG_TARGET_IS_OSX)
     find_library(FREEGLUT_RELEASE NAMES freeglut glut PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-    find_library(FREEGLUT_DEBUG NAMES freeglutd freeglut glutd glut PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+    find_library(FREEGLUT_DEBUG NAMES freeglutd freeglutd_d freeglut glutd glutd_d glut PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 endif()
 
 find_library(WEBP_RELEASE NAMES webp PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
-find_library(WEBP_DEBUG NAMES webpd webp PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(WEBP_DEBUG NAMES webpd webp_d webp PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(WEBPDEMUX_RELEASE NAMES webpdemux PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
-find_library(WEBPDEMUX_DEBUG NAMES webpdemuxd webpdemux PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(WEBPDEMUX_DEBUG NAMES webpdemuxd webpdemux_d webpdemux PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(WEBPMUX_RELEASE NAMES webpmux libwebpmux PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
 find_library(WEBPMUX_DEBUG NAMES webpmuxd webpmux libwebpmuxd libwebpmux PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 find_library(WEBPDECODER_RELEASE NAMES webpdecoder libwebpdecoder PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH) 
@@ -36,7 +36,7 @@ find_library(WEBPDECODER_DEBUG NAMES webpdecoder libwebpdecoder webpdecoderd lib
 
 #Dependent libraries
 find_library(LZMA_RELEASE lzma PATHS "${CURRENT_INSTALLED_DIR}/lib" NO_DEFAULT_PATH)
-find_library(LZMA_DEBUG lzmad lzma PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
+find_library(LZMA_DEBUG lzmad lzma_d lzma PATHS "${CURRENT_INSTALLED_DIR}/debug/lib" NO_DEFAULT_PATH)
 
 if(NOT VCPKG_TARGET_IS_WINDOWS)
     string(APPEND WEBP_RELEASE " -pthread")
