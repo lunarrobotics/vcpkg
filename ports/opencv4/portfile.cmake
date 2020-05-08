@@ -357,6 +357,10 @@ if("qt" IN_LIST FEATURES)
   list(APPEND ADDITIONAL_BUILD_FLAGS "-DCMAKE_AUTOMOC=ON")
 endif()
 
+if("cuda" IN_LIST FEATURES)
+  list(APPEND ADDITIONAL_BUILD_FLAGS "-DCUDA_ARCH_BIN=5.0")
+endif()
+
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
