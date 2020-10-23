@@ -68,6 +68,8 @@ vcpkg_configure_cmake(
         -DOGRE_BUILD_RENDERSYSTEM_GLES=OFF
         -DOGRE_BUILD_RENDERSYSTEM_GLES2=OFF
         -DFREETYPE_FOUND=ON
+        -DOGRE_BUILD_COMPONENT_OVERLAY=ON
+        -DOGRE_BUILD_COMPONENT_BITES=ON
 # Optional stuff
         ${FEATURE_OPTIONS}
 # vcpkg specific stuff
