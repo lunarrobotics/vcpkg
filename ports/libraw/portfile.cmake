@@ -26,6 +26,7 @@ vcpkg_configure_cmake(
     OPTIONS
         -DINSTALL_CMAKE_MODULE_PATH=${CURRENT_PACKAGES_DIR}/share/libraw
         -DCMAKE_DEBUG_POSTFIX=d
+        -DENABLE_EXAMPLES=OFF
 )
 
 vcpkg_install_cmake()
@@ -49,10 +50,14 @@ if(NOT VCPKG_CMAKE_SYSTEM_NAME OR VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore
 
     # Cleanup
     file(GLOB RELEASE_EXECUTABLES ${CURRENT_PACKAGES_DIR}/bin/*.exe)
-    file(REMOVE ${RELEASE_EXECUTABLES})
+    if (RELEASE_EXECUTABLES)
+        file(REMOVE ${RELEASE_EXECUTABLES})
+    endif()
     if(NOT VCPKG_BUILD_TYPE STREQUAL "release")
         file(GLOB DEBUG_EXECUTABLES ${CURRENT_PACKAGES_DIR}/debug/bin/*.exe)
-        file(REMOVE ${DEBUG_EXECUTABLES})
+        if (DEBUG_EXECUTABLES)
+            file(REMOVE ${DEBUG_EXECUTABLES})
+        endif()
     endif()
 endif()
 
