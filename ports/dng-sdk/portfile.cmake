@@ -1,4 +1,3 @@
-include(vcpkg_common_functions)
 
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
@@ -11,18 +10,18 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
     OPTIONS
-		-DBUILD_SHARED_LIBS=0
+        -DBUILD_SHARED_LIBS=0
         -DBUILD_EXAMPLES=1
         -DCMAKE_DEBUG_POSTFIX=_d
 )
 
 vcpkg_install_cmake()
 
-vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/dng_sdk)
+vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/dng_sdk TARGET_PATH share/dng_sdk)
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/usage DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT})
+file(COPY ${CMAKE_CURRENT_LIST_DIR}/usage DESTINATION ${CURRENT_PACKAGES_DIR}/share/dng_sdk)
 file(INSTALL ${SOURCE_PATH}/license.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
 
 #file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/tools/dng_sdk)
