@@ -1,9 +1,8 @@
-include(vcpkg_common_functions)
-
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
     URL https://github.com/siposcsaba89/adobe_xmp.git
-    REF d4e1b0b09c846ff69f4554299cdf326157abfd28
+    REF f096be6ee08c97fd5069e5ce7ad516c0b004f717
     PATCHES
 )
 
@@ -13,6 +12,7 @@ vcpkg_configure_cmake(
     OPTIONS
         -DXMP_BUILD_STATIC=1
         -DCMAKE_DEBUG_POSTFIX=_d
+        #-DCMAKE_BUILD_TYPE=Release
 )
 
 vcpkg_install_cmake()
