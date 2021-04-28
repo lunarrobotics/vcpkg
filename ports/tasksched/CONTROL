@@ -1,0 +1,4 @@
+Source: tasksched
+Version: 0.0.1
+Description: threadpool library with dependencies and do while execution pattern.
+Homepage: https://github.com/siposcsaba89/tasksched
