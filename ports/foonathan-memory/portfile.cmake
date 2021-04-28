@@ -7,7 +7,7 @@ vcpkg_from_github(
     REPO foonathan/memory
     REF 885a9d97bebe9a2f131d21d3c0928c42ab377c8b
     SHA512 7ce78a6e67d590a41b7f8a3d4ae0f6c1fa157c561b718a63973dffc000df74a9f0a0d7955a099e84fbeb3cf4085092eb866a6b8cec8bafd50bdcee94d069f65d
-    HEAD_REF master
+    HEAD_REF main
 )
 
 vcpkg_from_github(
