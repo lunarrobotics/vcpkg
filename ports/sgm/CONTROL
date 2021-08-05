@@ -1,0 +1,4 @@
+Source: sgm
+Version: 2.7.0
+Description: A CUDA implementation performing Semi-Global Matching.
+Homepage: https://github.com/siposcsaba89/libSGM
