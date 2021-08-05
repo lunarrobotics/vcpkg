@@ -582,6 +582,10 @@ if (VCPKG_TARGET_ARCHITECTURE STREQUAL "arm" OR VCPKG_TARGET_ARCHITECTURE STREQU
             message(STATUS "Building on host: ${CMAKE_SYSTEM_PROCESSOR}")
             set(OPTIONS_CROSS " --enable-cross-compile --target-os=darwin --arch=arm64 --extra-ldflags=-arch --extra-ldflags=arm64 --extra-cflags=-arch --extra-cflags=arm64 --extra-cxxflags=-arch --extra-cxxflags=arm64")
         endif()
+     elseif (VCPKG_CMAKE_SYSTEM_NAME STREQUAL "Linux")
+        find_program(PKGCONFIG pkg-config)
+        # Need to figure out a way to generate --cross-prefix below programmatically...
+        set(OPTIONS_CROSS " --enable-cross-compile --target-os=linux --arch=${VCPKG_TARGET_ARCHITECTURE} --cross-prefix=aarch64-linux-gnu- --pkg-config=${PKGCONFIG}")
     endif()
 elseif (VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
     if(VCPKG_TARGET_IS_OSX)
