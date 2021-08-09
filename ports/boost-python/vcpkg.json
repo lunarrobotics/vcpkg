@@ -35,8 +35,7 @@
     "boost-tuple",
     "boost-type-traits",
     "boost-utility",
-    "boost-vcpkg-helpers",
-    "python3"
+    "boost-vcpkg-helpers"
   ],
   "features": {
     "python2": {

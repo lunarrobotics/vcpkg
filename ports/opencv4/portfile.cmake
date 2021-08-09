@@ -313,6 +313,11 @@ if("cuda" IN_LIST FEATURES)
   list(APPEND ADDITIONAL_BUILD_FLAGS "-DCUDA_ARCH_BIN=5.0")
 endif()
 
+set(WITH_GTK OFF)
+if (UNIX)
+    set(WITH_GTK ON)
+endif()
+
 vcpkg_configure_cmake(
     PREFER_NINJA
     SOURCE_PATH ${SOURCE_PATH}
@@ -387,7 +392,7 @@ vcpkg_configure_cmake(
         ${FEATURE_OPTIONS}
         -DCMAKE_DISABLE_FIND_PACKAGE_Halide=ON
         -DHALIDE_ROOT_DIR=${CURRENT_INSTALLED_DIR}
-        -DWITH_GTK=OFF
+        -DWITH_GTK=${WITH_GTK}
         -DWITH_IPP=${WITH_IPP}
         -DWITH_MATLAB=OFF
         -DWITH_MSMF=${WITH_MSMF}
