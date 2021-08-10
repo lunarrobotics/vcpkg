@@ -59,7 +59,7 @@ set(CUDA_CUDART_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path
 #set(CUDA_nppitc_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/stubs/libnppitc.so)
 #set(CUDA_npps_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/stubs/libnpps.so)
 set(CMAKE_CUDA_COMPILER ${CUDA_TOOLKIT_ROOT_DIR}/bin/nvcc)
-
+set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
 #for fastrtps ros
 set(Asio_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../installed/arm64-linux-cross/include/)
 
