@@ -66,4 +66,6 @@ set(Asio_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../installed/arm64-linux-cross/in
 # load vcpkg toolchain
 set(VCPKG_TARGET_TRIPLET arm64-linux-cross)
 message(STATUS "Loading vcpkg toolchain: ${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake")
-include(${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake)
+if (NOT DEFINED VCPKG_CHAINLOAD_TOOLCHAIN_FILE) # handle recursion
+	include(${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake)
+endif()
