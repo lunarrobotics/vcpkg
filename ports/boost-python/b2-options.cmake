@@ -8,7 +8,7 @@ if("python2" IN_LIST FEATURES)
     string(REGEX REPLACE ".*python([0-9\.]+).*" "\\1" VCPKG_PYTHON2_VERSION "${VCPKG_PYTHON2_INCLUDE}")
     list(APPEND BUILD_PYTHON_VERSIONS "${VCPKG_PYTHON2_VERSION}")
 endif()
-if ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "aarch64" OR GNU)
+if ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "aarch64" OR UNIX)
 
     # Find Python3 libraries. Can't use find_package here, but we already know where everything is
     file(GLOB VCPKG_PYTHON3_INCLUDE "/usr/include/python3.*m")
@@ -35,7 +35,6 @@ endif()
 
 list(APPEND B2_OPTIONS
     python=${BUILD_PYTHON_VERSIONS}
-    cxxflags="-fPIC"
 )
 
 if(VCPKG_CXX_FLAGS_DEBUG MATCHES "BOOST_DEBUG_PYTHON")
