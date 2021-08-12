@@ -1,3 +1,4 @@
+include_guard()
 # CMake Toolchain file for crosscompiling on ARM.
 #
 # Target operating system name.
@@ -45,6 +46,7 @@ set(CUDA_TOOLKIT_ROOT_DIR $ENV{CUDA_TOOLKIT_ROOT_DIR})
 set(CUDA_TOOLKIT_INCLUDE ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/include)
 set(CUDA_INCLUDE_DIRS ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/include)
 set(CUDA_CUDART_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/libcudart.so)
+set(CUDA_CUDART ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/libcudart.so)
 set(CUDA_CUDA_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/stubs/libcuda.so)
 set(CUDA_cublas_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/stubs/libcublas.so)
 set(CUDA_cufft_LIBRARY ${CUDA_TOOLKIT_ROOT_DIR}/targets/${cuda_target_full_path}/lib/stubs/libcufft.so)
@@ -67,6 +69,5 @@ set(Asio_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../installed/${VCPKG_TARGET_TRIPL
 
 # load vcpkg toolchain
 message(STATUS "Loading vcpkg toolchain: ${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake")
-if (NOT DEFINED VCPKG_CHAINLOAD_TOOLCHAIN_FILE) # handle recursion
-	include(${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake)
-endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/../scripts/buildsystems/vcpkg.cmake)
