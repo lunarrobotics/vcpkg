@@ -1,4 +1,4 @@
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+#vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/BehaviorTree/BehaviorTree.CPP/archive/3.5.6.tar.gz"
