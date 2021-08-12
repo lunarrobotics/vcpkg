@@ -14,8 +14,6 @@ if(DEFINED BOOST_CMAKE_FRAGMENT)
     include(${BOOST_CMAKE_FRAGMENT})
 endif()
 
-list(APPEND B2_OPTIONS "cxxflags=-fPIC")
-
 # Add build type specific options
 if(BUILD_SHARED_LIBS)
     list(APPEND B2_OPTIONS runtime-link=shared)
@@ -39,10 +37,8 @@ endif()
 
 if(CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL "s390x")
     list(APPEND B2_OPTIONS architecture=s390x)
-elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm")
+elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm" OR VCPKG_TARGET_ARCHITECTURE STREQUAL "arm64")
     list(APPEND B2_OPTIONS architecture=arm)
-elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm64")
-    list(APPEND B2_OPTIONS architecture=arm abi=aapcs binary-format=elf)
 elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "ppc64le")
     list(APPEND B2_OPTIONS architecture=power)
 else()
