@@ -14,6 +14,8 @@ if(DEFINED BOOST_CMAKE_FRAGMENT)
     include(${BOOST_CMAKE_FRAGMENT})
 endif()
 
+list(APPEND B2_OPTIONS "cxxflags=-fPIC")
+
 # Add build type specific options
 if(BUILD_SHARED_LIBS)
     list(APPEND B2_OPTIONS runtime-link=shared)
