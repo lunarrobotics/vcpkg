@@ -13,6 +13,8 @@ set(B2_OPTIONS)
 
 include("${VCPKG_CMAKE_VARS_FILE}")
 
+list(APPEND B2_OPTIONS "cxxflags=-fPIC")
+
 # Add build type specific options
 if(VCPKG_CRT_LINKAGE STREQUAL "dynamic")
     list(APPEND B2_OPTIONS runtime-link=shared)
