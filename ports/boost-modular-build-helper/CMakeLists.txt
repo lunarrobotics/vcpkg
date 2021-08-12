@@ -13,8 +13,6 @@ set(B2_OPTIONS)
 
 include("${VCPKG_CMAKE_VARS_FILE}")
 
-list(APPEND B2_OPTIONS "cxxflags=-fPIC")
-
 # Add build type specific options
 if(VCPKG_CRT_LINKAGE STREQUAL "dynamic")
     list(APPEND B2_OPTIONS runtime-link=shared)
@@ -36,10 +34,8 @@ endif()
 
 if(VCPKG_TARGET_ARCHITECTURE STREQUAL "s390x")
     list(APPEND B2_OPTIONS architecture=s390x)
-elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm")
+elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm" OR VCPKG_TARGET_ARCHITECTURE STREQUAL "arm64")
     list(APPEND B2_OPTIONS architecture=arm)
-elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "arm64")
-    list(APPEND B2_OPTIONS architecture=arm abi=aapcs binary-format=elf)
 elseif(VCPKG_TARGET_ARCHITECTURE STREQUAL "ppc64le")
     list(APPEND B2_OPTIONS architecture=power)
 else()
