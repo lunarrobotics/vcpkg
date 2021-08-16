@@ -1,0 +1,6 @@
+Source: wrp-io
+Version: 0.1.5
+Port-Version: 2
+Build-Depends: asio
+Description: Weston Robot Linux Driver for IO
+Homepage: https://github.com/faulhornlabs/wrp_io
