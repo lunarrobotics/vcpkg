@@ -7,6 +7,13 @@ vcpkg_from_github(
     HEAD_REF master
 )
 
+set(AUTO_DETECT_ARCH ON)
+set(CUDA_ARCH "-arch=sm_50")
+#if cross compiling to nvidia agx
+if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux" AND VCPKG_TARGET_ARCHITECTURE STREQUAL "arm64")
+    set(AUTO_DETECT_ARCH OFF)
+    set(CUDA_ARCH "-arch=sm_72")
+endif()
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
@@ -14,6 +21,8 @@ vcpkg_configure_cmake(
         -DBUILD_EXAMPLES=OFF
         -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=1
         -DCMAKE_DEBUG_POSTFIX=_d
+        -DAUTO_DETECT_ARCH=${AUTO_DETECT_ARCH}
+        -DCUDA_ARCH=${CUDA_ARCH}
 )
 
 vcpkg_install_cmake()
