@@ -1,9 +1,9 @@
-vcpkg_check_linkage(ONLY_DYNAMIC_LIBRARY)
+#vcpkg_check_linkage(ONLY_DYNAMIC_LIBRARY)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO faulhornlabs/openvslam
-    REF 520d7c5e27d784381b61ed51f83c81b0e9473a41
-    SHA512 0be7802f264c7f0a8d28d4a3105299158d35a199c172682f3d02fcfb8bcd10ee6be2ba696b22adbaec9fe99e098baeb7a1e998656e33402a8dfb186c874d1695
+    REF 4fbe7852ef10f64bd07e276bbd5e653a07784cae
+    SHA512 d3f2bf7672aac9c99eee53d2e3e29be08111b30114197fbabdd11172a06f1d75c47f547feae5a02318d0fd65fcdb4f0bad21a2765b415c48f4051a73b136406d
     HEAD_REF master
 )
 
