@@ -33,6 +33,7 @@ imgui
 jsoncpp
 libxml2
 libyaml
+msgpack
 openvslam
 pcl
 protobuf
