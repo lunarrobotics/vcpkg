@@ -34,6 +34,7 @@ jsoncpp
 libxml2
 libyaml
 openvslam
+pcl
 protobuf
 rapidjson
 sgm
