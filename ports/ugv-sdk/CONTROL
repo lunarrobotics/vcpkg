@@ -1,6 +1,0 @@
-Source: ugv-sdk
-Version: 0.1.5
-Port-Version: 0
-Build-Depends: wrp-io
-Description: Weston Robot Linux Driver for IO
-Homepage: https://github.com/faulhornlabs/wrp_io

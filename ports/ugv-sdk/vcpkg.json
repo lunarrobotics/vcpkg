@@ -1,0 +1,9 @@
+{
+  "name": "ugv-sdk",
+  "version-string": "0.1.5",
+  "description": "Weston Robot Linux Driver for IO",
+  "homepage": "https://github.com/faulhornlabs/wrp_io",
+  "dependencies": [
+    "wrp-io"
+  ]
+}
