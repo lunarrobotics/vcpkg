@@ -28,6 +28,10 @@
       "baseline": "0.1.1f",
       "port-version": 1
     },
+    "adobe-xmp": {
+      "baseline": "5.6.0",
+      "port-version": 0
+    },
     "advobfuscator": {
       "baseline": "2020-06-26",
       "port-version": 0
@@ -1653,7 +1657,7 @@
       "port-version": 0
     },
     "dbow2": {
-      "baseline": "2019-08-05",
+      "baseline": "2020-10-10",
       "port-version": 0
     },
     "dbow3": {
@@ -1751,6 +1755,10 @@
     "dmlc": {
       "baseline": "2019-08-12",
       "port-version": 6
+    },
+    "dng-sdk": {
+      "baseline": "1.0.0",
+      "port-version": 0
     },
     "docopt": {
       "baseline": "2018-11-01",
@@ -2193,8 +2201,8 @@
       "port-version": 0
     },
     "g2o": {
-      "baseline": "2020-02-07",
-      "port-version": 1
+      "baseline": "2020-10-10",
+      "port-version": 2
     },
     "g3log": {
       "baseline": "1.3.4",
@@ -3832,6 +3840,10 @@
       "baseline": "latest-1",
       "port-version": 0
     },
+    "livox-sdk": {
+      "baseline": "2.3.0",
+      "port-version": 0
+    },
     "llfio": {
       "baseline": "2.0-20210420",
       "port-version": 0
@@ -4715,6 +4727,10 @@
     "openvr": {
       "baseline": "1.16.8",
       "port-version": 0
+    },
+    "openvslam": {
+      "baseline": "0.0.2",
+      "port-version": 1
     },
     "openxr-loader": {
       "baseline": "1.0.11",
@@ -5816,6 +5832,10 @@
       "baseline": "1.3",
       "port-version": 0
     },
+    "sgm": {
+      "baseline": "2.7.0",
+      "port-version": 0
+    },
     "shaderc": {
       "baseline": "2021.1",
       "port-version": 1
@@ -6180,6 +6200,10 @@
       "baseline": "3.1.0",
       "port-version": 0
     },
+    "tasksched": {
+      "baseline": "0.0.1",
+      "port-version": 0
+    },
     "tbb": {
       "baseline": "2020_U3",
       "port-version": 5
@@ -6458,6 +6482,10 @@
     },
     "uchardet": {
       "baseline": "2020-04-26",
+      "port-version": 0
+    },
+    "ugv-sdk": {
+      "baseline": "0.1.5",
       "port-version": 0
     },
     "umock-c": {
@@ -6743,6 +6771,10 @@
     "wren": {
       "baseline": "2019-07-01",
       "port-version": 0
+    },
+    "wrp-io": {
+      "baseline": "0.1.5",
+      "port-version": 3
     },
     "wt": {
       "baseline": "4.5.0",
