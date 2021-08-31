@@ -1,0 +1,7 @@
+{
+  "name": "openvslam",
+  "version-string": "0.0.2",
+  "port-version": 2,
+  "description": "OpenVSLAM: A Versatile Visual SLAM Framework",
+  "homepage": "https://github.com/faulhornlabs/openvslam"
+}
