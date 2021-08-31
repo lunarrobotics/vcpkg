@@ -2,8 +2,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO faulhornlabs/openvslam
-    REF 4fbe7852ef10f64bd07e276bbd5e653a07784cae
-    SHA512 d3f2bf7672aac9c99eee53d2e3e29be08111b30114197fbabdd11172a06f1d75c47f547feae5a02318d0fd65fcdb4f0bad21a2765b415c48f4051a73b136406d
+    REF 2bd2f0c0e6cf5c675aa338d0764d3fba34bec8ea
+    SHA512 5e96b5461e6926456525ac0cfd1fe808e2aab5cf7006931ca85adc694ec094bc50a579acb07ebea7a3780424f420389aa439dea70900738cc3f37a0d7b6ca12f
     HEAD_REF master
 )
 
