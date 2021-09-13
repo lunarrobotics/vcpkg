@@ -37,7 +37,7 @@ set(THREADS_PTHREAD_ARG "0"
 
 # ros 2 variables
 set(PYTHON_SOABI cpython-36m-aarch64-linux-gnu)
-set(PYTHON_MODULE_EXTENSION ".${PYTHON_SOABI}")
+set(PYTHON_MODULE_EXTENSION ".${PYTHON_SOABI}.so")
 
 # This set the target for 'nvcc' that used by CUDA_TOOLKIT
 #set(CUDA_TARGET_CPU_ARCH ${CMAKE_SYSTEM_PROCESSOR})
