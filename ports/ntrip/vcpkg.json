@@ -2,5 +2,6 @@
   "name": "ntrip",
   "version-string": "1.0.0",
   "description": "Simple NTRIP caster/client/server example programs, support the NTRIP 1.0/2.0 protocol;",
-  "homepage": "https://github.com/faulhornlabs/ntrip"
+  "homepage": "https://github.com/faulhornlabs/ntrip",
+  "port-version": 2
 }
