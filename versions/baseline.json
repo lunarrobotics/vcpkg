@@ -4458,7 +4458,7 @@
     },
     "ntrip": {
       "baseline": "1.0.0",
-      "port-version": 0
+      "port-version": 2
     },
     "nuklear": {
       "baseline": "2021-03-18",
