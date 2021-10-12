@@ -4940,6 +4940,10 @@
       "baseline": "1.2.0",
       "port-version": 0
     },
+    "ntrip": {
+      "baseline": "1.0.0",
+      "port-version": 0
+    },
     "nuklear": {
       "baseline": "2021-03-18",
       "port-version": 1
