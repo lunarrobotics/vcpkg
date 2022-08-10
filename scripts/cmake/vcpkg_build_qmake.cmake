@@ -58,6 +58,7 @@ function(vcpkg_build_qmake)
         set(items release)
     endif()
     foreach(build_type IN ITEMS ${items})
+        vcpkg_backup_env_variables(VARS PATH LD_LIBRARY_PATH)
         set(current_installed_prefix "${CURRENT_INSTALLED_DIR}${path_suffix_${build_type}}")
 
         vcpkg_add_to_path(PREPEND "${current_installed_prefix}/lib" "${current_installed_prefix}/bin")
